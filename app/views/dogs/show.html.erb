@@ -1,0 +1,14 @@
+<%# there should be a link to where a user can look at the dogs the owner has ? %>
+
+<h1>Hello! My name is <%=@dog.name%></h1>
+
+<h3>I am <%=@dog.age%> years old</h3>
+<h3>Did you know that I am a <%=@dog.breed%>?</h3>
+<h3>Look at me, I am very <%=@dog.size%>!</h3>
+<h3>I love to say, "<%=@dog.bio%>"</h3>
+<h3>My Owner is <%=link_to @dog.user.name, user_path%>, who I love very much!</h3>
+
+<h3><%= image_tag @dog.image_url%></h3>
+
+<%# there should be a link back to the owner show page %>
+<%# show page should have a list of all the dogs the user owns ??%>
