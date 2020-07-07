@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
     # add column for gender and image_url
 
+    def index
+        @users = User.all
+    end
+
     def new
         @user = User.new
     end

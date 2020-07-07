@@ -3,6 +3,7 @@ Age: <%= @user.age %><br>
 Location: <%= @user.location %><br>
 Occupation: <%= @user.occupation %><br>
 <br>
+<%= button_to "Edit Profile", @user, method: :get %>
 <h1>Dogs<h1>
 <ul>
 <% if @user.dogs %>
