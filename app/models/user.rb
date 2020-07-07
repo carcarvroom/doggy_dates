@@ -24,4 +24,6 @@ class User < ApplicationRecord
     #       has_many :teacher_relations, foreign_key: :student_id, class_name: "Relation"
     #       has_many :teachers, through: :teacher_relations, source: :teacher
     #   end
+
+    validates :username, uniqueness: true
 end
