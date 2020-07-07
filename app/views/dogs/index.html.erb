@@ -1,0 +1,13 @@
+<h1>Dogs</h1>
+
+<h3>Search by breed:</h3>
+<%= form_tag(dogs_path, method: :get) do %>
+    <%= select_tag "dog", options_from_collection_for_select(@dogs, 'id', 'breed'), multiple: true, include_blank: "All"  %>
+
+    <%= submit_tag ("Search") %>
+<% end %>
+<ul>
+<% @dogs.each do |dog|%>
+    <li><%= link_to dog.name, dog %></li>
+<% end %>
+</ul>
