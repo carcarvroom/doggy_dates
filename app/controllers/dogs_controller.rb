@@ -11,24 +11,35 @@ before_action :find_id, only: [:show, :edit, :update]
   end
 
   def create 
-    @dog = Dog.new(dog_params)
-    @dog.save
-    redirect_to user_path #user show path
+    @dog = Dog.create(dog_params)
+    if @dog.save
+    redirect_to @dog.user #user show path
+    else
+      # byebug
+      flash[:errors] = @dog.errors.full_messages
+      render :new
+     end
   end
+
 
   def update 
-    @dog.update(dog_params)
-    redirect_to 
+    if @dog.update(params.require(:dog).permit(:name, :age, :breed, :size, :bio, :image_url))
+      redirect_to dog_path
+    else
+      flash[:errors] = @dog.errors.full_messages
+      render :edit
+     end
   end
 
-  # def destroy 
-
-  # end
+  def destroy 
+    @dog.delete
+    redirect_to user_path
+  end
 
   private
 
   def dog_params 
-    params.require(:dog).permit(:name, :age, :breed, :size, :bio, :user_id)
+    params.require(:dog).permit(:name, :age, :breed, :size, :bio, :image_url, :user_id)
   end
 
   def find_id
