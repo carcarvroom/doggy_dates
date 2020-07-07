@@ -1,0 +1,19 @@
+<h1>Update Your Dog's Profile Here!</h1>
+
+<%= form_for @dog do |f|%>
+ <h3>Name:</h3>
+ <%=f.text_field :name%>
+ <h3>Age:</h3>
+ <%=f.number_field :age%>
+ <h3>Breed:</h3>
+ <%=f.text_field :breed%>
+ <h3>Size:</h3>
+ <%=f.text_field :size%>
+ <h3>Bio:</h3>
+ <%=f.text_area :bio%>
+ <h3>image_url:</h3>
+ <%=f.text_field :image_url%><br>
+ <br>
+ <%= f.submit "Update Dog Profile"%>
+ 
+ <%end%>
