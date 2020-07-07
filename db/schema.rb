@@ -37,10 +37,9 @@ ActiveRecord::Schema.define(version: 2020_07_07_025755) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.integer "matcher"
-    t.integer "matchee"
+    t.integer "matcher_id"
+    t.integer "matchee_id"
     t.string "status"
-    t.integer "chat_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

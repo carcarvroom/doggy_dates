@@ -44,4 +44,6 @@ require 'httparty'
 #     })
 # end
 
+match1 = Match.create(matcher_id: 1, matchee_id: 2, status: "pending")
+
 puts "Seeds done!"
