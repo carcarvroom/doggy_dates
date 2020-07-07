@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     # add column for gender and image_url
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            redirect_to @user
+            redirect_to login_path
         else
             flash[:message] = @user.errors.full_messages
             render :new

@@ -1,6 +1,10 @@
 class DogsController < ApplicationController
 before_action :find_id, only: [:show, :edit, :update]
 
+  def index
+    @dogs = Dog.all
+  end
+
   # def show 
   #   # byebug
   #   @dog = Dog.find(params[:id])
@@ -24,6 +28,10 @@ before_action :find_id, only: [:show, :edit, :update]
   # def destroy 
 
   # end
+
+  def dog_like
+    
+  end
 
   private
 
