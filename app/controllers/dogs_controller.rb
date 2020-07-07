@@ -1,9 +1,10 @@
 class DogsController < ApplicationController
+before_action :find_id, only: [:show, :edit, :update]
 
-  def show 
-    # byebug
-    @dog = Dog.find(params[:id])
-  end
+  # def show 
+  #   # byebug
+  #   @dog = Dog.find(params[:id])
+  # end
 
   def new 
     @dog = Dog.new
@@ -15,12 +16,23 @@ class DogsController < ApplicationController
     redirect_to user_path #user show path
   end
 
-  # <%# redirect to user show path %>
+  def update 
+    @dog.update(dog_params)
+    redirect_to 
+  end
+
+  # def destroy 
+
+  # end
 
   private
 
   def dog_params 
     params.require(:dog).permit(:name, :age, :breed, :size, :bio, :user_id)
+  end
+
+  def find_id
+    @dog = Dog.find(params[:id])
   end
 
 end
