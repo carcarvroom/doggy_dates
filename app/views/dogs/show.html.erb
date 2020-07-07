@@ -5,9 +5,11 @@
 <h3>Did you know that I am a <%=@dog.breed%>?</h3>
 <h3>Look at me, I am very <%=@dog.size%>!</h3>
 <h3>I love to say, "<%=@dog.bio%>"</h3>
-<h3>My Owner is <%=link_to @dog.user.name, user_path%>, who I love very much!</h3>
-
+<h3>My Owner is <%=link_to @dog.user.name, @dog.user%>, who I love very much!</h3>
+<%=button_to "Edit Dog", @user, method: :edit%><br>
+<%= button_to "Delete Dog", @user, method: :delete %>
 <h3><%= image_tag @dog.image_url%></h3>
 
 
 <%= button_to "I like this dog!", likes_path %>
+

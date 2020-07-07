@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_211648) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "chat_id"
   end
 
   create_table "users", force: :cascade do |t|
