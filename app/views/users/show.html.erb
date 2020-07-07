@@ -1,0 +1,18 @@
+<h1><%= @user.name %></h1>
+Age: <%= @user.age %><br>
+Location: <%= @user.location %><br>
+Occupation: <%= @user.occupation %><br>
+<br>
+<h1>Dogs<h1>
+<ul>
+<% if @user.dogs %>
+    <% @user.dogs.each do |dog| %>
+        <li><%= dog.name %></li>
+    <% end %>
+<% end %>
+</ul>
+
+<%= button_to "Add Dog", new_dog_path %>
+<%= button_to "Delete Account", @user, method: :delete %>
+
+

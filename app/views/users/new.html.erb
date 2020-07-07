@@ -1,0 +1,16 @@
+<h1>Create Your Profile</h1>
+
+
+<%= form_for @user do |f| %>
+    Username: <%= f.text_field :username %>
+    Name: <%= f.text_field :name %>
+    Age: <%= f.number_field :age %>
+    Location: <%= f.text_field :location %>
+    Occupation: <%= f.text_field :occupation %>
+    <%= f.submit%>
+<% end %>
+
+<br>
+<br>
+
+<%= flash[:messsage] %>
