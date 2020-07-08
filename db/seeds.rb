@@ -45,6 +45,6 @@ end
     })
 end
 
-# match1 = Match.create(matcher_id: 1, matchee_id: 2, status: "pending")
+# match1 = Match.create(matcher_id: 1, matchee_id: 2)
 
 puts "Seeds done!"
