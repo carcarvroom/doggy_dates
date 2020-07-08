@@ -9,6 +9,8 @@
     - unique username (Done)
     - has_secure_password
 
+* Remove user index page
+
 # Stretch Goals
 - Bootstrap - better styling! 
 - Multiple animals
