@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
-    before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
+    # before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
     # add column for gender and image_url
 
     def index
+        # if a user is not logged in, they shouldnt see the index
         @users = User.all
+        helpers.logged_in?(@users)
+
     end
 
     def new
@@ -50,4 +53,5 @@ class UsersController < ApplicationController
     def find_user
         @user = User.find(params[:id])
     end
+    
 end
