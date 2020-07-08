@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,5 +17,13 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
+/* .navbar a.brand {
+    font-size: 18px;
+}
+
+.navbar a.brand:hover {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+} */
