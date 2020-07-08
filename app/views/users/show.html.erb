@@ -1,23 +1,30 @@
+<%= button_to "View All Dogs", dogs_path, method: :get %><br>
+
 <h1><%= @user.name %></h1>
 Username: <%= @user.username %><br>
 Age: <%= @user.age %><br>
 Location: <%= @user.location %><br>
 Occupation: <%= @user.occupation %><br>
 <br>
-<%= button_to "Edit Profile", edit_user_path(@user), method: :get %>
-<h1>Dogs<h1>
+
+<h1>These are my dogs!<h1>
 <ul>
 <% if @user.dogs.empty? %>
     <h4>No dogs</h4>
 <% else %>
-    <% @user.dogs.each do |dog| %>
-        <li><%= link_to dog.name, dog %></li>
+    <% @user.dogs.each do |dog|%>
+        <h3><%= link_to dog.name, dog %></h3>
+        Age: <%= dog.age %>
+        Breed: <%= dog.breed %><br>
+        <%= image_tag dog.image_url, width: "350", height: "250" %>
+        <br><br>
     <% end %>
 <% end %>
 </ul>
 
-<%= button_to "Add Dog", new_dog_path, method: :get %>
-<%= button_to "Logout", logout_path, method: :delete %>
-<%= button_to "Delete Account", @user, method: :delete %>
-
-
+<% if current_user.id == @user.id %>
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get %><br>
+    <%= button_to "Add Dog", new_dog_path, method: :get %>
+    <%= button_to "Logout", logout_path, method: :delete %>
+    <%= button_to "Delete Account", @user, method: :delete %>
+<% end %>
