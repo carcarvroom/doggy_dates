@@ -10,9 +10,10 @@ class LikesController < ApplicationController
                 Chat.create(timestamp: Time.now)
             else
                 byebug
-                Match.create(matcher_id: current_user.id, matchee_id: owner_id, status: "pending")
+                Match.create(matcher_id: current_user.id, matchee_id: owner_id, status: "pending", chat_id: nil)
                 redirect_to root_path
             end
         end
     end
 end
+# match = Match.create(matcher_id: 23, matchee_id: 27, status: "pending")

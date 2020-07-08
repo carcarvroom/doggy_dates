@@ -1,5 +1,3 @@
 class Chat < ApplicationRecord
-    has_many :matches
-    has_many :users, through: :matches
-
+    belongs_to :match
 end
