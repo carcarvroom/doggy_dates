@@ -1,0 +1,17 @@
+<h1>Welcome!</h1>
+<% if logged_in? %>
+    <h1>You are logged in, <%= current_user.name.capitalize %>!</h1> 
+    <%= button_to "Profile", current_user, method: :get%>
+<% else %>
+<%= flash[:message] %>
+    <br><br>
+    <%= form_for :auth, url: '/login' do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %><br><br>
+        <%= f.label :password%>
+        <%= f.password_field :password%><br><br>
+        <%= f.submit "Login"%>
+    <% end %>
+    <br>
+    <%= button_to "Sign Up", '/users/new', method: :get%>
+<% end %>

@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
-    # before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
+    skip_before_action :authorized, only: [:new, :create]
     before_action :find_user, only: [:show, :edit, :update, :destroy]
 
-    # add column for gender and image_url
-
     def index
-        # if a user is not logged in, they shouldnt see the index
         @users = User.all
-        helpers.logged_in?(@users)
-
     end
 
     def new
@@ -25,12 +20,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
     def update
         if @user.update(params.require(:user).permit(:name, :age, :location, :occupation))
             redirect_to @user
@@ -42,16 +31,15 @@ class UsersController < ApplicationController
 
     def destroy
         @user.delete
-        redirect_to new_user_path # update to login page
+        redirect_to root_path
     end
 
     private
     def user_params
-        params.require(:user).permit(:name, :age, :location, :occupation, :username)
+        params.require(:user).permit(:name, :age, :location, :occupation, :username, :password)
     end
 
     def find_user
         @user = User.find(params[:id])
     end
-    
 end

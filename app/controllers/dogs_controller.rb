@@ -5,11 +5,6 @@ class DogsController < ApplicationController
     @dogs = Dog.all
   end
 
-  # def show 
-  #   # byebug
-  #   @dog = Dog.find(params[:id])
-  # end
-
   def new 
     @dog = Dog.new
   end
@@ -17,15 +12,11 @@ class DogsController < ApplicationController
   def create 
     @dog = Dog.create(dog_params)
     if @dog.save
-    redirect_to @dog.user #user show path
+      redirect_to @dog.user
     else
-      # byebug
       flash[:errors] = @dog.errors.full_messages
       render :new
-     end
-  end
-
-  def edit
+    end
   end
 
   def update 
@@ -34,7 +25,7 @@ class DogsController < ApplicationController
     else
       flash[:errors] = @dog.errors.full_messages
       render :edit
-     end
+    end
   end
 
   def destroy 
@@ -42,9 +33,7 @@ class DogsController < ApplicationController
     redirect_to @dog.user
   end
 
-
   private
-
   def dog_params 
     params.require(:dog).permit(:name, :age, :breed, :size, :bio, :image_url, :user_id)
   end
@@ -52,5 +41,4 @@ class DogsController < ApplicationController
   def find_id
     @dog = Dog.find(params[:id])
   end
-
 end

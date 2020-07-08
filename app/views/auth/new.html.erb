@@ -1,7 +1,10 @@
 <h1>Login</h1>
 <%= flash[:message] %>
+<br><br>
 <%= form_for :auth do |f| %>
     <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username %><br><br>
+    <%= f.label :password%>
+    <%= f.password_field :password%><br><br>
     <%= f.submit "Login"%>
 <% end %>

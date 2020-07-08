@@ -1,22 +1,18 @@
 class ApplicationController < ActionController::Base
+    before_action :authorized
+    helper_method :current_user, :logged_in?
 
-
-
-    # helper_method :logged_in?, :redirect_user, :current_user
+    def current_user
+        User.find_by(id: session[:user_id]) if session[:user_id]
+    end
     
-    # def logged_in?
-    #     !!current_user
-    # end
+    def logged_in?
+        !current_user.nil?
+    end
 
-    # def current_user
-    #     user = User.find(session[:user_id]) if session[:user_id]
-    # end
-
-    # def redirect_user
-    #     if !logged_in?
-    #         flash[:message] = "Please login"
-    #         redirect_to login_path
-    #     end
-    # end
+    def authorized
+        flash[:message] = "Please sign up or login to view this content."
+        redirect_to root_path unless logged_in?
+    end
 
 end

@@ -1,14 +1,14 @@
 <h1>Edit Your Profile</h1>
-
+<% if !!flash[:message] %>
+    <% flash[:message].each do |message| %>
+        <p><%= message %></p> <br>
+    <% end %>
+<% end %>
 <%= form_for @user do |f| %>
-    Name: <%= f.text_field :name %>
-    Age: <%= f.number_field :age %>
-    Location: <%= f.text_field :location %>
-    Occupation: <%= f.text_field :occupation %>
+    Name: <%= f.text_field :name %><br><br>
+    Age: <%= f.number_field :age %><br><br>
+    Location: <%= f.text_field :location %><br><br>
+    Occupation: <%= f.text_field :occupation %><br><br>
     <%= f.submit "Update Profile" %>
 <% end %>
 
-<br>
-<br>
-
-<%= flash[:messsage] %>

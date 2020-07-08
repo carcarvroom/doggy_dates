@@ -1,11 +1,11 @@
 require 'faker'
 require 'httparty'
 
-# User: name, age:integer, location, occupation, username
+# User: name, age:integer, location, occupation, username, password
 # Dog: user_id, name, age:integer, breed, size, bio, image_url
 # Match: matchee, matcher, status, chat_id=nil
 # Chat: timestamp:datetime
-# Like: user_id:integer
+# Like: user_id, dog_id
 
 class GetDog
     def self.get_breed
@@ -29,6 +29,7 @@ end
         location: Faker::Address.city,
         occupation: Faker::Job.title,
         username: Faker::Color.unique.color_name,
+        password: Faker::Internet.password
     })
 end
 
@@ -44,6 +45,6 @@ end
     })
 end
 
-match1 = Match.create(matcher_id: 1, matchee_id: 2, status: "pending")
+# match1 = Match.create(matcher_id: 1, matchee_id: 2, status: "pending")
 
 puts "Seeds done!"
