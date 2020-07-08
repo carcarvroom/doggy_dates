@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_08_045311) do
+ActiveRecord::Schema.define(version: 2020_07_08_162123) do
 
   create_table "chats", force: :cascade do |t|
     t.datetime "timestamp"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "match_id"
   end
 
   create_table "dogs", force: :cascade do |t|
@@ -40,10 +41,9 @@ ActiveRecord::Schema.define(version: 2020_07_08_045311) do
   create_table "matches", force: :cascade do |t|
     t.integer "matcher_id"
     t.integer "matchee_id"
-    t.string "status"
+    t.string "status", default: "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "chat_id"
   end
 
   create_table "users", force: :cascade do |t|
