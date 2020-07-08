@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_211648) do
+ActiveRecord::Schema.define(version: 2020_07_07_211955) do
 
   create_table "chats", force: :cascade do |t|
     t.datetime "timestamp"

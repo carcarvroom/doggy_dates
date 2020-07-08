@@ -1,14 +1,11 @@
 <h1>Edit Your Profile</h1>
 
-<h3>Search by Location</h3>
-
-
 <%= form_for @user do |f| %>
     Name: <%= f.text_field :name %>
     Age: <%= f.number_field :age %>
     Location: <%= f.text_field :location %>
     Occupation: <%= f.text_field :occupation %>
-    <%= f.submit%>
+    <%= f.submit "Update Profile" %>
 <% end %>
 
 <br>

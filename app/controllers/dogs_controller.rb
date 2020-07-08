@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-before_action :find_id, only: [:show, :edit, :update]
+  before_action :find_id, only: [:show, :edit, :update, :destroy]
 
   def index
     @dogs = Dog.all
@@ -25,6 +25,8 @@ before_action :find_id, only: [:show, :edit, :update]
      end
   end
 
+  def edit
+  end
 
   def update 
     if @dog.update(params.require(:dog).permit(:name, :age, :breed, :size, :bio, :image_url))
@@ -37,12 +39,9 @@ before_action :find_id, only: [:show, :edit, :update]
 
   def destroy 
     @dog.delete
-    redirect_to user_path
+    redirect_to @dog.user
   end
 
-  def dog_like
-    
-  end
 
   private
 
