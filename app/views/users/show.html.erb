@@ -1,30 +1,39 @@
 <%= button_to "View All Dogs", dogs_path, method: :get %><br>
 
+<%# nav bar %>
+
+<%# different font  %>
 <h1><%= @user.name %></h1>
 Username: <%= @user.username %><br>
 Age: <%= @user.age %><br>
 Location: <%= @user.location %><br>
 Occupation: <%= @user.occupation %><br>
 <br>
+<%# different font %>
+<h2>These are my dogs!<h2>
 
-<h1>These are my dogs!<h1>
 <ul>
 <% if @user.dogs.empty? %>
     <h4>No dogs</h4>
 <% else %>
     <% @user.dogs.each do |dog|%>
         <h3><%= link_to dog.name, dog %></h3>
-        Age: <%= dog.age %>
-        Breed: <%= dog.breed %><br>
+        <h4>Age:</h4><%= dog.age %>
+        <h4>Breed:</h4><%= dog.breed %><br>
         <%= image_tag dog.image_url, width: "350", height: "250" %>
         <br><br>
     <% end %>
 <% end %>
 </ul>
-
+<%# maybe nav bar? %>
 <% if current_user.id == @user.id %>
-    <%= button_to "Edit Profile", edit_user_path(@user), method: :get %><br>
-    <%= button_to "Add Dog", new_dog_path, method: :get %>
-    <%= button_to "Logout", logout_path, method: :delete %>
-    <%= button_to "Delete Account", @user, method: :delete %>
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get %> <br>
+    <%= button_to "Add Dog", new_dog_path, method: :get %><br>
+    <%= button_to "Delete Account", @user, method: :delete %><br>
+    <%= button_to "Likes", like_path(@user.likes), method: :get %><br>
+    <%= button_to "Matches", match_path(@user.matches), method: :get %><br>
+    <%= button_to "Chats", chat_path(@user.chats), method: :get %><br>
+    <%= button_to "Logout", logout_path, method: :delete %><br>
+
 <% end %>
+

@@ -7,11 +7,11 @@ class LikesController < ApplicationController
             if Match.where(matcher_id: owner_id, matchee_id: current_user.id, status: "pending").exists?
                 match = Match.find_by(matcher_id: dog.user.id, matchee_id: current_user.id)
                 match.update(status: "approved")
-                Chat.create(timestamp: Time.now)
+                match.chats.create(timestamp: Time.now)
             else
                 # byebug
                 Match.create(matcher_id: current_user.id, matchee_id: owner_id)
-                redirect_to root_path
+                redirect_to dogs_path
             end
         end
     end
