@@ -1,17 +1,22 @@
 <%= button_to "Go back to profile", current_user, method: :get%>
 <h1>Dogs</h1>
 
-<h3>Search by breed:</h3>
-<%= form_tag(dogs_path, method: :get) do %>
-    <%= select_tag "dog", options_from_collection_for_select(@dogs, 'id', 'breed'), multiple: true, include_blank: "All"  %>
-
-    <%= submit_tag ("Search") %>
+<div class="active-cyan-3 active-cyan-4 mb-4">
+     <input class="form-control" type="text" placeholder="Search Dogs" aria-label="Search">
+    <% form_tag(dogs_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Dogs" %>
+        <%= submit_tag "Search" %>
+    <% end %>
+</div>
+<% if @dogs.blank? %>
+    <h4>There are no dogs that match your search <%= params[:search] %>.</h4>
+<% else %>
+    <% @dogs.each do |dog|%>
+        <h3><%= link_to dog.name, dog %></h3>
+        Age: <%= dog.age %>
+        Breed: <%= dog.breed %><br>
+        <%= image_tag dog.image_url, width: "350", height: "250" %>
+        <br><br>
+    <% end %>
 <% end %>
 
-<% @dogs.each do |dog|%>
-    <h3><%= link_to dog.name, dog %></h3>
-    Age: <%= dog.age %>
-    Breed: <%= dog.breed %><br>
-    <%= image_tag dog.image_url, width: "350", height: "250" %>
-     <br><br>
-<% end %>
