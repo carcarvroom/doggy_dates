@@ -1,4 +1,9 @@
 class LikesController < ApplicationController
+    def index
+        @user = User.find(current_user.id)
+        @likes = @user.likes
+    end
+
     def create
         liked_dog = params[:dog]
         @like = Like.new(user_id: current_user.id, dog_id: liked_dog)
@@ -7,13 +12,22 @@ class LikesController < ApplicationController
             if Match.where(matcher_id: owner_id, matchee_id: current_user.id, status: "pending").exists?
                 match = Match.find_by(matcher_id: owner_id, matchee_id: current_user.id)
                 match.update(status: "approved")
-                match.chats.create(timestamp: Time.now)
-                new_chat = match.chats.create(timestamp: Time.now)
-                redirect_to chat_path(new_chat)
-            else
+                new_chat = match.chats.create(user_id: current_user.id, timestamp: Time.now, body: "Hey! We matched!")
+                flash[:match] = "You matched!!!"
+                redirect_to chats_path
+            elses
                 Match.create(matcher_id: current_user.id, matchee_id: owner_id)
                 redirect_to dogs_path
             end
+        else
+            flash[:error] = "You have already liked this dog!"
+            redirect_to dog_path(liked_dog)
         end
+    end
+
+    def destroy
+        @like = Like.find(params[:id])
+        @like.delete
+        redirect_to likes_path
     end
 end

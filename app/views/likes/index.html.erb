@@ -1,0 +1,6 @@
+<h1>Dogs you liked!</h1>
+<ul>
+<% @likes.each do |like| %>
+    <li><%= link_to like.dog.name, dog_path(like.dog) %></li>
+<% end %>
+</ul>

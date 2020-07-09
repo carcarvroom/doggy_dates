@@ -1,9 +1,5 @@
 <h1>Edit Your Profile</h1>
-<% if !!flash[:message] %>
-    <% flash[:message].each do |message| %>
-        <p><%= message %></p> <br>
-    <% end %>
-<% end %>
+<%= flash[:error] %>
 <%= form_for @user do |f| %>
     Name: <%= f.text_field :name %><br><br>
     Age: <%= f.number_field :age %><br><br>

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_07_08_223941) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "match_id"
     t.text "body"
+    t.integer "user_id"
   end
 
   create_table "dogs", force: :cascade do |t|
