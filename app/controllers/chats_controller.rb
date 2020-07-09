@@ -4,6 +4,11 @@ class ChatsController < ApplicationController
         @match = Match.find_by(matcher_id: current_user.id, status: "approved")
     end
   end
+  
+  def index
+    @chats = @match.chats
+    @chat = @match.chats.new
+  end
 
   def new 
     @chat = @match.chats.new
@@ -12,15 +17,10 @@ class ChatsController < ApplicationController
   def create
     @chat = @match.chats.new(chat_params)
     if @chat.save
-      redirect_to chats_path
+      redirect_to match_chats_path(@match, @match.chats)
     end
   end
   
-  def show 
-    @chats = @match.chats
-    @chat = @match.chats.new
-  end
-
   private
   def chat_params
     params.require(:chat).permit(:user_id, :body, :timestamp)

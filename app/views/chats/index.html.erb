@@ -1,4 +1,4 @@
-<h1>Chat Message</h1>
+<h1>Chat!</h1>
 <style>
   .icon-flipped {
   transform: scaleX(-1);
@@ -42,7 +42,7 @@ $(document).ready(function(){
 </div>
 
 <div class="col-md-10 col-md-offset-1">
-<%= form_for @chat do |f| %>
+<%= form_for(@chat, url: match_chats_path) do |f| %>
 <div class="form-group">
   <%= f.text_area :body, class: "form-control" %>
 </div>

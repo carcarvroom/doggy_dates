@@ -13,5 +13,13 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :name, :age, :location, presence: true
     has_secure_password
+
+    def self.current
+        Thread.current[:user]
+    end
+
+    def self.current=(user)
+        Thread.current[:user] = user
+    end
     
 end
