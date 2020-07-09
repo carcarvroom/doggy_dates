@@ -12,14 +12,15 @@ class Match < ApplicationRecord
     end
 
     def self.my_matches
-        approved_matches = Match.find_by(status: "approved")
-        if approved_matches.find_by(matcher_id: current_user.id).exists?
-            matcher_matches = approved_matches.find_by(matcher_id: current_user.id)
-        elsif approved_matches.find_by(matchee_id: current_user.id).exists?
-            matchee_matches = approved_matches.find_by(matchee_id: current_user.id)
-        elsif
-            puts "None"
+        approved_matches = Match.all.where(status: "approved")
+        all_matches = []
+        approved_matches.each do |matches|
+            if matches.matcher_id == User.current.id
+                all_matches << matches
+            elsif matches.matchee_id == User.current.id
+                all_matches << matches
+            end
         end
-        all = matcher_matches + matchee_matches
+        all_matches
     end
 end
