@@ -1,6 +1,10 @@
-<h1>Users</h1>
+<div id="titles"><h1>Fellow Dog Lovers Profile</h1></div>
+
+<div class="list-container">
 <ul>
 <% @users.each do |user|%>
     <li><%= link_to user.name, user %></li>
 <% end %>
 </ul>
+</div>
+<%# fix this and make it look less empty %>

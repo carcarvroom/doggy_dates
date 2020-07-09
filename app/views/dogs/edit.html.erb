@@ -1,5 +1,6 @@
-<h1>Update Your Dog's Profile Here!</h1>
-
+<div id="titles"><h1>Update Your Dog's Profile Here!</h1></div>
+<%# <i class="fas fa-dog"></i> %>
+<%# want to have a font awesome icon of a dog here %>
   <% if !!flash[:errors] %>
   <% flash[:errors].each do |e| %>
   <p><%= e %></p> <br>
@@ -19,8 +20,7 @@
  <%=f.text_area :bio%>
  <h3>image_url:</h3>
  <%=f.text_field :image_url%><br>
-
  <br>
  <%= f.submit "Update Dog Profile"%>
- 
  <%end%>
+ 

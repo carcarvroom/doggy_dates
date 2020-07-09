@@ -1,4 +1,4 @@
-
+<%# nav bar %>
 <% if current_user.id == @user.id %>
 <ul class="nav justify-content-center">
 <li class="nav-item">
@@ -18,18 +18,18 @@
   </li>
 </ul>
 <% end %>
-<%# nav bar %>
 
-<%# different font  %>
-<%# container 1  %>
-<h1><%= @user.name %></h1>
+
+<div id="user-names"><%= @user.name %></div>
+<%# user profile pic here %>
+<p>
 Username: <%= @user.username %><br>
 Age: <%= @user.age %><br>
 Location: <%= @user.location %><br>
 Occupation: <%= @user.occupation %><br>
 <br>
 <%# different font %>
-<h2>These are my dogs!<h2>
+<h2>These are my dogs!<h2><p>
 
 <% if @user.dogs.empty? %>
     <h4>No dogs</h4>
@@ -58,6 +58,9 @@ Occupation: <%= @user.occupation %><br>
     <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-primary" %>
   </li>
   <%end%>
+
+
+<%# add a footer for user to go back to profile %>
 
 
 
