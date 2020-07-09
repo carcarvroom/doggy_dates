@@ -14,6 +14,12 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+ body { 
+    background-image: url("https://www.pngitem.com/pimgs/m/60-607731_transparent-huellas-png-cat-paw-print-background-png.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+
  #login{
      display: flex;
      flex-direction: column;
