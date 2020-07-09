@@ -1,6 +1,6 @@
 class AuthController < ApplicationController
     skip_before_action :authorized, only: [:new, :create, :welcome]
-    
+
     def create
         @user = User.find_by(username: params[:auth][:username])
         if @user && @user.authenticate(params[:auth][:password])

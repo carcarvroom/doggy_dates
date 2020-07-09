@@ -1,7 +1,17 @@
 class MatchesController < ApplicationController
   
   def index
-    @matches = Match.my_matches
+    approved_matches = Match.all.where(status: "approved")
+    @matches = []
+    # byebug
+    approved_matches.each do |matches|
+        if matches.matcher_id == current_user
+            @matches << matches
+        elsif matches.matchee_id == current_user
+            @matches << matches
+        end
+    end
+    @matches
   end
 
   def show 

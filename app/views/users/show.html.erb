@@ -21,7 +21,7 @@ Occupation: <%= @user.occupation %><br>
   <div class="card-body">
     <h5 class="card-title"><%= dog.name %></h5>
     <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
-    <%= button_to 'Delete', @user, method: :delete, class: "btn btn-primary" %>
+    <%= button_to 'Delete', dog, method: :delete, class: "btn btn-primary" %>
     </div>
 </div>
     <%end%>

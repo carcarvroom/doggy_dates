@@ -6,7 +6,7 @@ class ChatsController < ApplicationController
   end
   
   def index
-    @chats = @match.chats
+    @chats = Chat.all.where(match_id: params[:matchid])
     @chat = @match.chats.new
   end
 

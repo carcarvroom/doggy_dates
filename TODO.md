@@ -10,6 +10,9 @@
 # Bugs
 1. Ability to remove like.
 2. Remove Match button. Chats will be removed through matches
+3. Welcome, Login page while logged in
+4. Dog delete deletes user
+5. Can see dog delete on other user
 
 # Stretch Goals
 - Bootstrap - better styling! 

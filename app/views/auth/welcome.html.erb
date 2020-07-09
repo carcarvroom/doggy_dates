@@ -1,7 +1,7 @@
 <h1>Welcome!</h1>
 <% if logged_in? %>
     <h1>You are logged in, <%= current_user.name.capitalize %>!</h1> 
-    <%= button_to "Profile", current_user, method: :get%>
+    <%= button_to "Profile", current_user, method: :get%><br>
     <%= button_to "Logout", logout_path, method: :delete %>
 <% else %>
 <%= flash[:message] %>

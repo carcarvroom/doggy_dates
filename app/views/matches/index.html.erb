@@ -1,6 +1,6 @@
 <h1>All Your Matches!</h1>
 <ul>
 <% @matches.each do |match| %>
-    <li><%= link_to match.id, match_chats_path(match, match.chats), method: :get %></li>
+    <li><%= link_to match.id, match_chats_path(match, match.chats, matchid: match.id), method: :get %></li>
 <% end %>
 </ul>

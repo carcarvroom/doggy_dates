@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-    before_action :current_user, only: [:index, :edit, :update, :destroy]
+    before_action :find_user, only: [:index, :show, :edit, :update, :destroy]
     skip_before_action :authorized, only: [:new, :create]
-    skip_before_action :set_current_user, only: [:show]
+    # skip_before_action :set_current_user, only: [:show]
 
     def index
         @users = User.all
@@ -21,10 +21,6 @@ class UsersController < ApplicationController
         end
     end
 
-    def show
-        @user = User.find(params[:id])
-    end
-
     def update
         if @user.update(params.require(:user).permit(:name, :age, :location, :occupation))
             redirect_to @user
@@ -42,5 +38,9 @@ class UsersController < ApplicationController
     private
     def user_params
         params.require(:user).permit(:name, :age, :location, :occupation, :username, :password)
+    end
+
+    def find_user
+        @user = User.find(params[:id])
     end
 end
