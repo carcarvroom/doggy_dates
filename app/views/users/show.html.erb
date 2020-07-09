@@ -1,8 +1,27 @@
-<%= button_to "View All Dogs", dogs_path, method: :get %><br>
 
+<% if current_user.id == @user.id %>
+<ul class="nav justify-content-center">
+<li class="nav-item">
+    <%= button_to "View All Dogs", dogs_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
+  </li>
+  <li class="nav-item">
+    <%= button_to "Likes", like_path(@user.likes), method: :get, class: "nav-link active", class: "btn btn-primary" %>
+  </li>
+  <li class="nav-item">
+    <%= button_to "Matches", match_path(@user.matches), method: :get, class: "nav-link active", class: "btn btn-primary" %>
+  </li>
+  <li class="nav-item">
+    <%= button_to "Chats", chat_path(@user.chats), method: :get, class: "nav-link active", class: "btn btn-primary" %>
+  </li>
+  <li class="nav-item">
+    <%=  button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-primary" %>
+  </li>
+</ul>
+<% end %>
 <%# nav bar %>
 
 <%# different font  %>
+<%# container 1  %>
 <h1><%= @user.name %></h1>
 Username: <%= @user.username %><br>
 Age: <%= @user.age %><br>
@@ -12,28 +31,38 @@ Occupation: <%= @user.occupation %><br>
 <%# different font %>
 <h2>These are my dogs!<h2>
 
-<ul>
 <% if @user.dogs.empty? %>
     <h4>No dogs</h4>
 <% else %>
-    <% @user.dogs.each do |dog|%>
-        <h3><%= link_to dog.name, dog %></h3>
-        <h4>Age:</h4><%= dog.age %>
-        <h4>Breed:</h4><%= dog.breed %><br>
-        <%= image_tag dog.image_url, width: "350", height: "250" %>
-        <br><br>
-    <% end %>
+<div class="container-dogs">
+   <%@user.dogs.each do |dog|%>
+<div class="card" style="width: 18rem;">
+<h3><%= link_to dog.name, dog %></h3>
+  <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
+  <div class="card-body">
+    <h5 class="card-title"><%= dog.name %></h5>
+    <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
+    <%= button_to 'Delete', @user, method: :delete, class: "btn btn-primary" %>
+    </div>
+</div>
+    <%end%>
 <% end %>
-</ul>
-<%# maybe nav bar? %>
-<% if current_user.id == @user.id %>
-    <%= button_to "Edit Profile", edit_user_path(@user), method: :get %> <br>
-    <%= button_to "Add Dog", new_dog_path, method: :get %><br>
-    <%= button_to "Delete Account", @user, method: :delete %><br>
-    <%= button_to "Likes", like_path(@user.likes), method: :get %><br>
-    <%= button_to "Matches", match_path(@user.matches), method: :get %><br>
-    <%= button_to "Chats", chat_path(@user.chats), method: :get %><br>
-    <%= button_to "Logout", logout_path, method: :delete %><br>
+</div>
 
-<% end %>
+<% if current_user.id == @user.id %>
+<ul class="nav justify-content-center">
+<li class="nav-item">
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "btn btn-primary"%>
+  </li>
+  <li class="nav-item">
+    <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-primary" %>
+  </li>
+  <%end%>
+
+
+
+
+
+
+
 
