@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-    before_action :current_user, only: [:index, :show, :edit, :update, :destroy]
+    before_action :current_user, only: [:index, :edit, :update, :destroy]
     skip_before_action :authorized, only: [:new, :create]
+    skip_before_action :set_current_user, only: [:show]
 
     def index
         @users = User.all
@@ -18,6 +19,10 @@ class UsersController < ApplicationController
             flash[:error] = @user.errors.full_messages
             render :new
         end
+    end
+
+    def show
+        @user = User.find(params[:id])
     end
 
     def update

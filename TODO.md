@@ -8,8 +8,8 @@
 - /likes
 
 # Bugs
-1. When you like a dog you already liked, nothing occurs. Ability to remove like.
-2. Remove Chats button. Chats will be through matches
+1. Ability to remove like.
+2. Remove Match button. Chats will be removed through matches
 
 # Stretch Goals
 - Bootstrap - better styling! 
