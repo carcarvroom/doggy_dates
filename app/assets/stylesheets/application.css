@@ -34,9 +34,35 @@ justify-content-center {
     margin: 5px;
 }
 
+#user-names,
+#titles {
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+}
 
-/* .card-body {
+p {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+.list-container {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    font-size: 20px;
+    justify-self: center;
+}
+
+#dog-profile {
+    text-align: center;
+}
+
+.container-dogs-index {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-} */
+    justify-self: center;
+    padding: 10px;
+    /* justify-content: space-between; */
+}

@@ -1,5 +1,7 @@
-<h1>Edit Your Profile</h1>
+<div id="titles"><h1>Edit Your Profile</h1></div>
+
 <%= flash[:error] %>
+
 <%= form_for @user do |f| %>
     Name: <%= f.text_field :name %><br><br>
     Age: <%= f.number_field :age %><br><br>
