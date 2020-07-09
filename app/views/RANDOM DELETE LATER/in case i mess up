@@ -1,0 +1,51 @@
+<% if current_user.id == @user.id %>
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get %> <br>
+    <%= button_to "Add Dog", new_dog_path, method: :get %><br>
+    <%= button_to "Delete Account", @user, method: :delete %><br>
+    <%= button_to "Likes", like_path(@user.likes), method: :get %><br>
+    <%= button_to "Matches", match_path(@user.matches), method: :get %><br>
+    <%= button_to "Chats", chat_path(@user.chats), method: :get %><br>
+    <%= button_to "Logout", logout_path, method: :delete %><br>
+
+<% end %>
+
+ <%= button_to "View All Dogs", dogs_path, method: :get %>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <%= button_to "View All Dogs", dogs_path, method: :get, class: "nav-link active" %>
+   </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+    <%= link_to "Likes", like_path(@user.likes), method: :get, class: "dropdown-item" %>
+     <%= button_to "Matches", match_path(@user.matches), method: :get, class: "dropdown-item" %>
+    <%= button_to "Chats", chat_path(@user.chats), method: :get, class: "dropdown-item" %>
+    <%= button_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+    </div>
+  </li> 
+</ul> 
+
+<ul>
+<% if @user.dogs.empty? %>
+    <h4>No dogs</h4>
+<% else %>
+    <% @user.dogs.each do |dog|%>
+        <h3><%= link_to dog.name, dog %></h3>
+        <h4>Age:</h4><%= dog.age %>
+        <h4>Breed:</h4><%= dog.breed %><br>
+        <%= image_tag dog.image_url, width: "350", height: "250" %>
+        <br><br>
+
+          
+<div class="card" style="width: 18rem;">
+  <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
+  <div class="card-body">
+    <h5 class="card-title"><%= dog.name %></h5>
+    <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
+    <%= button_to 'Delete', @user, method: :delete, class: "btn btn-primary" %>
+  </div>
+</div>
+    <% end %>
+<% end %>
+</ul>
