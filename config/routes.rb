@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :likes
-  resources :chats
-  resources :matches
+  resources :likes, only: [:index, :create, :destroy]
+  resources :matches do 
+    resources :chats, only: [:index, :new, :create]
+  end
   resources :dogs
-  resources :users
+  resources :users 
   root 'auth#welcome'
   get 'login', to: 'auth#new'
   post 'login', to: 'auth#create'

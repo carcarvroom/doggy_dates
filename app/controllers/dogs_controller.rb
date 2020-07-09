@@ -2,7 +2,11 @@ class DogsController < ApplicationController
   before_action :find_id, only: [:show, :edit, :update, :destroy]
 
   def index
-    @dogs = Dog.all
+    if params[:search]
+      @dogs = Dog.search(params[:search].order('created_at DESC'))
+    else
+      @dogs = Dog.all.order("created_at DESC")
+    end
   end
 
   def new 
