@@ -1,8 +1,9 @@
+<div id="login">
 <h1>Welcome!</h1>
 <% if logged_in? %>
     <h1>You are logged in, <%= current_user.name.capitalize %>!</h1> 
-    <%= button_to "Profile", current_user, method: :get%>
-    <%= button_to "Logout", logout_path, method: :delete %>
+    <%= button_to "Profile", current_user, method: :get, class: "btn btn-primary"%><br>
+    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-primary" %>
 <% else %>
 <%= flash[:message] %>
     <br><br>
@@ -11,6 +12,10 @@
         <%= f.text_field :username %><br><br>
         <%= f.label :password%>
         <%= f.password_field :password%><br><br>
-        <%= f.submit "Login"%>
+        <%= f.submit "Login", class: "btn btn-primary"%>
     <% end %>
 <% end %>
+<br><br>
+ <h1>Hurry Your Dog Lover Soulmate Is Waiting For You!?</h1>
+
+</div>
