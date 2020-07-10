@@ -15,87 +15,91 @@
     <%# font awesome %>
     <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href=#>A Dog Lovers Paradise</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">A Dog Lovers Paradise</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <% if logged_in? %>
-        <% if current_user.id == @user.id %>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= button_to "Profile", user_path(@user.id), method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "View All Dogs", dogs_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Likes", likes_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Matches", matches_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-          </ul>
-        </div>
-        <% elsif logged_in? && current_user.id != @user.id%>
-          <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= button_to "Profile", user_path(current_user.id), method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "View All Dogs", dogs_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Likes", likes_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Matches", matches_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-          </ul>
-        </div>
-      <% else %>
-          <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <%= button_to "Login", login_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-            <li class="nav-item">
-              <%= button_to "Create Account", '/users/new', method: :get, class: "nav-link active", class: "btn btn-primary" %>
-            </li>
-          </ul>
-        </div>
-      <% end %>
-      <% else %>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <%= button_to "Login", login_path, method: :get, class: "nav-link active", class: "btn btn-primary" %>
-          </li>
-          <li class="nav-item">
-            <%= button_to "Create Account", '/users/new', method: :get, class: "nav-link active", class: "btn btn-primary" %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
-    </nav>
+<% if logged_in? %>
+    <% if current_user.id == @user.id %>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= button_to "Profile", user_path(@user.id), method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "View All Dogs", dogs_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Likes", likes_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Matches", matches_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+      </ul>
+    </div>
+    <% elsif logged_in? && current_user.id != @user.id%>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= button_to "Profile", user_path(current_user.id), method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "View All Dogs", dogs_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Likes", likes_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Matches", matches_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+      </ul>
+    </div>
+  <% else %>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= button_to "Login", login_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Create Account", '/users/new', method: :get, class: "nav-link active", class: "btn btn-danger" %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+  <% else %>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= button_to "Login", login_path, method: :get, class: "nav-link active", class: "btn btn-danger" %>
+      </li>
+      <li class="nav-item">
+        <%= button_to "Create Account", '/users/new', method: :get, class: "nav-link active", class: "btn btn-danger" %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+</nav>
  
   </head>
 
   <body>
 
+<<<<<<< HEAD
     <!-- As a heading -->
     <%# <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> %>
+=======
+   <!-- As a heading -->
+>>>>>>> 36ce30cd40505ed3171b7bf2433c90971fd5f973
     <%= yield %>
 
   </body>

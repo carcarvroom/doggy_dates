@@ -1,7 +1,7 @@
 <body class="welcome"> 
 <div id="middle-heart">
-    <h1>Login</h1>
 
+    <h1>Login</h1>
     <% if logged_in? %>
         <h1>You are logged in, <%= current_user.name.capitalize %>!</h1> 
         <%= button_to "Profile", current_user, method: :get, class: "btn btn-primary"%><br>
