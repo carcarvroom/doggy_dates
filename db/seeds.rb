@@ -27,16 +27,16 @@ end
 # joe = User.create(name: "Joe", age: 22, location: "San Francisco", occupation: "Student", username: "joe", password: "joe")
 # bob = User.create(name: "Bob", age: 30, location: "San Francisco", occupation: "Software Engineer", username: "bob", password: "bob")
 
-# 10.times do
-#     User.create({
-#         name: Faker::FunnyName.two_word_name,
-#         age: rand(20..40),
-#         location: Faker::Address.city,
-#         occupation: Faker::Job.title,
-#         username: Faker::Color.unique.color_name,
-#         password: Faker::Internet.password
-#     })
-# end
+10.times do
+    User.create({
+        name: Faker::FunnyName.two_word_name,
+        age: rand(20..40),
+        location: Faker::Address.city,
+        occupation: Faker::Job.title,
+        username: Faker::Color.unique.color_name,
+        password: Faker::Internet.password
+    })
+end
 
 20.times do
     Dog.create({
