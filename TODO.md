@@ -6,6 +6,8 @@
 - Bootstrap - better styling! 
 - Multiple animals
 - Passwords
+- Self Join
+- CSS
 
 # User Stories
 1. As a user, I can create a profile. (CREATE)
