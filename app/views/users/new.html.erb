@@ -1,20 +1,16 @@
 <div id="middle-heart">
 <div id="titles"><h1>Create Your Profile</h1></div>
 
-
-<%= form_for @user do |f| %>
-    Username: <%= f.text_field :username %><br><br>
-    Password:  <%= f.password_field :password %><br><br>
-    Name: <%= f.text_field :name %><br><br>
-    Age: <%= f.number_field :age %><br><br>
-    Location: <%= f.text_field :location %><br><br>
-    Occupation: <%= f.text_field :occupation %><br><br>
-    <%= f.submit%>
-<% end %>
-
-<br>
-<br>
-
-<%= flash[:error] %>
+    <%= form_for @user do |f| %>
+        Username: <%= f.text_field :username %><br><br>
+        Password:  <%= f.password_field :password %><br><br>
+        Name: <%= f.text_field :name %><br><br>
+        Age: <%= f.number_field :age %><br><br>
+        Location: <%= f.text_field :location %><br><br>
+        Occupation: <%= f.text_field :occupation %><br><br>
+        <%= f.submit%>
+    <% end %>
+    <br><br>
+    <%= flash[:error] %>
 
 </div>

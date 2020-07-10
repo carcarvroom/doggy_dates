@@ -13,8 +13,4 @@ class MatchesController < ApplicationController
     @matches
   end
 
-  def show 
-    @match = Match.find_by(matcher_id: current_user.id)
-  end
-
 end

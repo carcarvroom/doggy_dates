@@ -22,7 +22,6 @@ Occupation: <%= @user.occupation %><br>
     <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
     <%= button_to 'Delete', dog, method: :delete, class: "btn btn-danger" %>
     </div>
-</div>
     <%end%>
 <% end %>
 </div>
@@ -43,6 +42,6 @@ Occupation: <%= @user.occupation %><br>
   <li class="nav-item">
     <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-danger" %>
   </li>
-  <%end%>
-
-
+<%end%>
+</div>
+</div>

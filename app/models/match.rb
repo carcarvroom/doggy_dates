@@ -11,16 +11,4 @@ class Match < ApplicationRecord
         end
     end
 
-    # def self.my_matches
-    #     approved_matches = Match.all.where(status: "approved")
-    #     all_matches = []
-    #     approved_matches.each do |matches|
-    #         if matches.matcher_id == User.current.id
-    #             all_matches << matches
-    #         elsif matches.matchee_id == User.current.id
-    #             all_matches << matches
-    #         end
-    #     end
-    #     all_matches
-    # end
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :likes, only: [:index, :create, :destroy]
-  resources :matches do 
+  resources :matches, only: [:index] do 
     resources :chats, only: [:index, :new, :create]
   end
   resources :dogs

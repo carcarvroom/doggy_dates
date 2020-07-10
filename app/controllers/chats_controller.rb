@@ -1,12 +1,11 @@
 class ChatsController < ApplicationController
   before_action do
     if !@match = Match.find_by(matchee_id: current_user.id, status: "approved")
-        @match = Match.find_by(matcher_id: current_user.id, status: "approved")
+      @match = Match.find_by(matcher_id: current_user.id, status: "approved")
     end
   end
   
   def index
-    # byebug
     if params[:matchid] 
       session[:chatid] = params[:matchid]
       @chats = Chat.all.where(match_id: params[:matchid])

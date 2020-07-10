@@ -1,28 +1,28 @@
 <h1>Create Your Doggy's Profile Here!</h1>
 
   <% if !!flash[:errors] %>
-  <% flash[:errors].each do |e| %>
-  <p><%= e %></p> <br>
+    <% flash[:errors].each do |e| %>
+      <p><%= e %></p> <br>
     <% end %>
   <% end %>
 
 <%=form_for @dog do |f|%>
- <h3>Name:</h3>
- <%=f.text_field :name%>
- <h3>Age:</h3>
- <%=f.number_field :age%>
- <h3>Breed:</h3>
- <%=f.text_field :breed%>
- <h3>Size:</h3>
- <%=f.text_field :size%>
- <h3>Bio:</h3>
- <%=f.text_area :bio%>
- <h3>image_url:</h3>
- <%=f.text_field :image_url%><br>
- <%=f.hidden_field :user_id, value: current_user.id%>
+  <h3>Name:</h3>
+  <%=f.text_field :name%>
+  <h3>Age:</h3>
+  <%=f.number_field :age%>
+  <h3>Breed:</h3>
+  <%=f.text_field :breed%>
+  <h3>Size:</h3>
+  <%=f.text_field :size%>
+  <h3>Bio:</h3>
+  <%=f.text_area :bio%>
+  <h3>image_url:</h3>
+  <%=f.text_field :image_url%><br>
+  <%=f.hidden_field :user_id, value: current_user.id%>
 
- <br>
- <%= f.submit "Create Dog Profile"%>
+  <br>
+  <%= f.submit "Create Dog Profile"%>
 
  <%end%>
 
