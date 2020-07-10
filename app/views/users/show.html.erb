@@ -14,38 +14,38 @@ Occupation: <%= @user.occupation %><br>
     <h4>No dogs</h4>
 <% else %>
    <%@user.dogs.each do |dog|%>
-    <div class="card" style="width: 18rem;">
-      <h3><%= link_to dog.name, dog %></h3>
-      <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
-      <div class="card-body">
-        <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
-            <% if current_user.id == @user.id %>
-              <%= button_to 'Delete', dog, method: :delete, class: "btn btn-danger" %>
-            <% end %>
-        </div>
-        </div>
+
+<div class="card" style="width: 18rem;">
+<h3><%= link_to dog.name, dog %></h3>
+  <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
+  <div class="card-body">
+    <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
+    <%= button_to 'Delete', dog, method: :delete, class: "btn btn-danger" %>
+    </div>
+    </div>
+
     <%end%>
 <% end %>
-</div>
+  </div>
+
 
 
 <% if current_user.id == @user.id %>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  <div class="collapse navbar-collapse" id="navbarColor01">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-    <li class="nav-item">
-      <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "btn btn-danger"%>
-    </li>
-    <li class="nav-item">
-      <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-danger" %>
+<li class="nav-item">
+    <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "btn btn-danger"%>
+  </li>
+  <li class="nav-item">
+    <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-danger" %>
     </li>
     <li class="nav-item">
       <%= button_to "Delete Account", user_path(current_user), method: :delete, class: "btn btn-danger" %>
     </li>
 <%end%>
-</div>
-</div>
+
