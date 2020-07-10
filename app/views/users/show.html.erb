@@ -9,11 +9,10 @@ Occupation: <%= @user.occupation %><br>
 <br>
 
 <h2>These are my dogs!<h2><p>
-
+<div class="container-dogs">
 <% if @user.dogs.empty? %>
     <h4>No dogs</h4>
 <% else %>
-<div class="container-dogs">
    <%@user.dogs.each do |dog|%>
 <div class="card" style="width: 18rem;">
 <h3><%= link_to dog.name, dog %></h3>
@@ -22,26 +21,28 @@ Occupation: <%= @user.occupation %><br>
     <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
     <%= button_to 'Delete', dog, method: :delete, class: "btn btn-danger" %>
     </div>
+    </div>
     <%end%>
 <% end %>
-</div>
+  </div>
+
 
 <% if current_user.id == @user.id %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%# <a class="navbar-brand" href="#">A Dog Lovers Paradise</a> %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarColor01">
+ <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-<%# <ul class="nav justify-content-center"> %>
 <li class="nav-item">
     <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "btn btn-danger"%>
   </li>
   <li class="nav-item">
     <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-danger" %>
-  </li>
+    </li>
+    </ul>
+  </div>
+</nav>
 <%end%>
-</div>
-</div>
+

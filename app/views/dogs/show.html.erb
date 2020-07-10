@@ -11,6 +11,7 @@
  <h3>My Owner is <%=link_to @dog.user.name, user_path(@dog.user_id)%>, who I love very much!</h3>
 
 <% if current_user == @dog.user.id%>
+
   <div id="footer-nav">
       <%= button_to "Edit Dog", edit_dog_path(@dog), method: :get %><br>
       <%= button_to "Delete Dog", @dog, method: :delete %>
@@ -31,6 +32,7 @@
       </ul>
   </div>
   </nav>
+  </div>
+</div>
 <% end %>
-</div>
-</div>
+
