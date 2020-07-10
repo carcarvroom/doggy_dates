@@ -21,7 +21,7 @@
 ![](https://media.giphy.com/media/L0NBGdEtE8tUP6MVwH/giphy.gif)
 
 ## Usage
-[![Youtube Image Link](https://youtu.be/egtJ2lOPFkM/0.jpg)](https://youtu.be/egtJ2lOPFkM)
+[![Youtube Image Link](https://img.youtube.com/vi/egtJ2lOPFkM/hqdefault.jpg)](https://youtu.be/egtJ2lOPFkM)
 
 ## Contributing
   Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
