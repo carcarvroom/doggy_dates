@@ -20,7 +20,9 @@ Occupation: <%= @user.occupation %><br>
       <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
       <div class="card-body">
         <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
-        <%= button_to 'Delete', dog, method: :delete, class: "btn btn-primary" %>
+        <% if current_user.id == @user.id %>
+          <%= button_to 'Delete', dog, method: :delete, class: "btn btn-primary" %>
+        <% end %>
         </div>
     </div>
     <%end%>
