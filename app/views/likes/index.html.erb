@@ -1,4 +1,5 @@
-<div id="middle-heart">
+<body class="pug-love"> 
+<div id="middle">
 <h1>Dogs you liked!</h1>
 <% @likes.each do |like| %>
     <li><%= link_to like.dog.name, dog_path(like.dog), class: "btn btn-danger" %></li><br>

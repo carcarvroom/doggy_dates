@@ -1,16 +1,13 @@
 # To do
 * add image url for user
-* Match page
 
-# Bugs
-2. Remove Match button. Chats will be removed through matches
-4. Dog delete deletes user
-5. Can see dog delete on other user
 
 # Stretch Goals
 - Bootstrap - better styling! 
 - Multiple animals
 - Passwords
+- Self Join
+- CSS
 
 # User Stories
 1. As a user, I can create a profile. (CREATE)

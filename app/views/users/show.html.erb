@@ -1,4 +1,4 @@
-
+<body class="corgie"> 
 <div id="user-names"><%= @user.name %></div>
 <p>
 
@@ -14,6 +14,7 @@ Occupation: <%= @user.occupation %><br>
     <h4>No dogs</h4>
 <% else %>
    <%@user.dogs.each do |dog|%>
+
 <div class="card" style="width: 18rem;">
 <h3><%= link_to dog.name, dog %></h3>
   <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
@@ -22,9 +23,11 @@ Occupation: <%= @user.occupation %><br>
     <%= button_to 'Delete', dog, method: :delete, class: "btn btn-danger" %>
     </div>
     </div>
+
     <%end%>
 <% end %>
   </div>
+
 
 
 <% if current_user.id == @user.id %>
@@ -44,5 +47,6 @@ Occupation: <%= @user.occupation %><br>
     </ul>
   </div>
 </nav>
+
 <%end%>
 

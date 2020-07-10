@@ -1,6 +1,14 @@
+<body class="welcome"> 
+<div id="middle">
 <div id="titles"><h1>Edit Your Profile</h1></div>
+<% if flash[:error]%>
+    <p class="text-danger" style="font-size:14px;">
 
-<%= flash[:error] %>
+    <% flash[:error].each do |e| %>
+        <%= "#{e}. " %>
+    <% end %>
+    </p>
+<% end %>
 
 <%= form_for @user do |f| %>
     Name: <%= f.text_field :name %><br><br>
@@ -9,4 +17,4 @@
     Occupation: <%= f.text_field :occupation %><br><br>
     <%= f.submit "Update Profile" %>
 <% end %>
-
+</div>

@@ -1,12 +1,11 @@
+<body class="heart"> 
 <div id="middle-heart">
     <h1>Welcome!</h1>
     <% if logged_in? %>
-        <h1>You are logged in, <%= current_user.name.capitalize %>!</h1> 
+        <h1 class="text-info">You are logged in, <%= current_user.name.capitalize %>!</h1> 
         <%= button_to "Profile", current_user, method: :get, class: "btn btn-primary"%><br>
         <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-primary" %>
     <% else %>
-        <%= flash[:message] %>
-        <br><br>
         <%= form_for :auth, url: '/login' do |f| %>
             <%= f.label :username %>
             <%= f.text_field :username %><br><br>

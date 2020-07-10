@@ -14,12 +14,44 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- body { 
+ body.heart { 
     background-image: url("https://www.pngitem.com/pimgs/m/60-607731_transparent-huellas-png-cat-paw-print-background-png.png");
     background-size: cover;
     background-repeat: no-repeat;
+}
 
-    }
+body.welcome {
+  background-image: url("https://www.festivalclaca.cat/imgfv/b/126-1261514_png-dog-paw-transparent-transparent-background-dog-paw.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body.shiba {
+  background-image: url("https://images.alphacoders.com/494/494303.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body.shiba-cartoon {
+  background-image: url("https://i1.wp.com/www.anupghosal.com/wp-content/uploads/2020/05/laptop-wallpaper-full-hd-cartoon-hd-wallpapers-amp-backgrounds-cartoon-hd-wallpapers-for-laptop.jpg?fit=1862%2C1047&ssl=1");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body.corgie {
+  background-image: url("https://wallpapercave.com/wp/wp5776635.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body.pug-love {
+  background-image: url("https://i.pinimg.com/originals/43/3d/d3/433dd354c58c2c3482d2c928ff46390a.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body.pug {
+  background-image: url("https://i.pinimg.com/originals/43/f7/85/43f7858f497bc56272abb2c3297ef638.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
  #middle-heart{
      display: flex;
@@ -27,7 +59,12 @@
      text-align: center;
      padding-top: 150px;
  }
-
+ #middle{
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     padding-top: 50px;
+ }
 
 .nav,
 justify-content-center {

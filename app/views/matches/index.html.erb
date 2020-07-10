@@ -1,10 +1,12 @@
-<div id="middle-heart">
-
+<body class="shiba-cartoon"> 
+<div id="middle">
 <h1>All Your Matches!</h1>
-
-
 <% @matches.each do |match| %>
-    <li><%= link_to match.id, match_chats_path(match, match.chats, matchid: match.id), method: :get, class: "btn btn-danger"%></li>
+    <% if current_user.id == match.matcher.id %>
+        <li><%= link_to "#{match.matchee.name}", match_chats_path(match, match.chats, matchid: match.id), method: :get, class: "btn btn-primary"%></li>
+    <% else %>
+        <li><%= link_to "#{match.matcher.name}", match_chats_path(match, match.chats, matchid: match.id), method: :get, class: "btn btn-primary"%></li>
+    <% end %>
+    <br>
 <% end %>
-
 </div>
