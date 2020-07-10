@@ -1,6 +1,6 @@
+<div id="middle-heart">
 <h1>Dogs you liked!</h1>
-<ul>
 <% @likes.each do |like| %>
-    <li><%= link_to like.dog.name, dog_path(like.dog) %></li>
+    <li><%= link_to like.dog.name, dog_path(like.dog), class: "btn btn-primary" %></li><br>
 <% end %>
-</ul>
+</div>

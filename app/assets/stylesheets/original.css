@@ -14,25 +14,25 @@
  *= require_self
  */
 
-.nav,
+/* .nav,
 justify-content-center {
     background: rgb(184, 232, 248);
 }
 
 .nav-item {
     padding: 20px
-}
+} */
 
-.container-dogs {
+/* .container-dogs {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     /* justify-content: space-between; */
-}
+} */
 
-.card {
+/* .card {
     margin: 5px;
-}
+} */
 
 
 /* .card-body {

@@ -1,6 +1,24 @@
 <div id="titles"><h1>Dogs</h1></div>
 
-    <%= form_tag dogs_path, :method => 'get' do %>
+<div class="container-dogs">
+<% @dogs.each do |dog|%>
+<div class="card border-info mb-3" style="max-width: 40rem;">
+    <h3><%= link_to dog.name, dog %></h3>
+      <div class="card-body">
+    Age: <%= dog.age %>
+    Breed: <%= dog.breed %><br>
+    <%= image_tag dog.image_url, width: "310", height: "240"%>
+     <br><br>
+      </div>
+     </div>
+<% end %>
+ </div>
+</div>
+
+
+<div class="active-cyan-3 active-cyan-4 mb-4">
+     <input class="form-control" type="text" placeholder="Search Dogs" aria-label="Search">
+    <% form_tag(dogs_path, :method => "get", id: "search-form") do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Dogs" %>
         <%= submit_tag "Search" %>
     <% end %>
