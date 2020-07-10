@@ -10,13 +10,24 @@
  <h3>I love to say, "<%=@dog.bio%>"</h3>
  <h3>My Owner is <%=link_to @dog.user.name, user_path(@dog.user_id)%>, who I love very much!</h3>
 
-<% if current_user == @dog.user.id%>
-  <div id="footer-nav">
-      <%= button_to "Edit Dog", edit_dog_path(@dog), method: :get %><br>
-      <%= button_to "Delete Dog", @dog, method: :delete %>
+<% if current_user.id == @dog.user.id%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      <%= button_to "Edit Dog", edit_dog_path(@dog), method: :get, class: "nav-link active", class: "btn btn-danger" %><br>
+      </li>
+      <li class="nav-item">
+      <%= button_to "Delete Dog", @dog, method: :delete, class: "nav-link active", class: "btn btn-danger" %>
+      </li>
+      </ul>
+  </div>
+  </nav>
 <% else %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%# <a class="navbar-brand" href="#">A Dog Lovers Paradise</a> %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,4 +44,4 @@
   </nav>
 <% end %>
 </div>
-</div>
+
