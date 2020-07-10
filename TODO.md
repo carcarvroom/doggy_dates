@@ -1,9 +1,6 @@
 # To do
 * add image url for user
-* Match page
 
-# Bugs
-2. Remove Match button. Chats will be removed through matches
 
 # Stretch Goals
 - Bootstrap - better styling! 

@@ -1,3 +1,4 @@
+<body class="welcome"> 
 <div id="middle-heart">
     <h1>Login</h1>
 
@@ -6,8 +7,9 @@
         <%= button_to "Profile", current_user, method: :get, class: "btn btn-primary"%><br>
         <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-primary" %>
     <% else %>
-        <%= flash[:message] %>
-        <br><br>
+        <br>
+        <p class="text-danger" style="font-size:14px;"><%= flash[:message] %></p>
+        <br>
         <%= form_for :auth do |f| %>
             <%= f.label :username %>
             <%= f.text_field :username %><br><br>
