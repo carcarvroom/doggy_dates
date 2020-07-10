@@ -1,10 +1,15 @@
+<body class="welcome"> 
+<div id="middle">
 <h1>Create Your Doggy's Profile Here!</h1>
 
-  <% if !!flash[:errors] %>
+<% if flash[:errors]%>
+    <p class="text-danger" style="font-size:14px;">
+
     <% flash[:errors].each do |e| %>
-      <p><%= e %></p> <br>
+        <%= "#{e}. " %>
     <% end %>
-  <% end %>
+    </p>
+<% end %>
 
 <%=form_for @dog do |f|%>
   <h3>Name:</h3>
@@ -25,4 +30,4 @@
   <%= f.submit "Create Dog Profile"%>
 
  <%end%>
-
+</div>
