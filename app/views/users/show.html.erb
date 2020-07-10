@@ -13,29 +13,29 @@ Occupation: <%= @user.occupation %><br>
 <% if @user.dogs.empty? %>
     <h4>No dogs</h4>
 <% else %>
-<div class="container-dogs">
-   <%@user.dogs.each do |dog|%>
-<div class="card" style="width: 18rem;">
-<h3><%= link_to dog.name, dog %></h3>
-  <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
-  <div class="card-body">
-    <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
-    <%= button_to 'Delete', dog, method: :delete, class: "btn btn-primary" %>
+    <div class="container-dogs">
+      <%@user.dogs.each do |dog|%>
+    <div class="card" style="width: 18rem;">
+    <h3><%= link_to dog.name, dog %></h3>
+      <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
+      <div class="card-body">
+        <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
+        <%= button_to 'Delete', dog, method: :delete, class: "btn btn-primary" %>
+        </div>
     </div>
-</div>
     <%end%>
 <% end %>
 </div>
 
 <% if current_user.id == @user.id %>
-<ul class="nav justify-content-center">
-<li class="nav-item">
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
     <%= button_to "Edit Profile", edit_user_path(@user), method: :get, class: "btn btn-primary"%>
   </li>
   <li class="nav-item">
     <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-primary" %>
   </li>
-  <%end%>
+<%end%>
 
 
 

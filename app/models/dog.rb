@@ -10,4 +10,5 @@ class Dog < ApplicationRecord
             all
         end
     end
+    
 end

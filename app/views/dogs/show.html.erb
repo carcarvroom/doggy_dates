@@ -1,25 +1,25 @@
 <%= flash[:error] %>
 
 <div id="dog-profile">
-<div id="titles"><h1>Hello! My name is <%=@dog.name%></h1>
-<h3><%= image_tag @dog.image_url, width: "350", height: "250"%></h3></div>
-<h3>I am <%=@dog.age%> years old</h3>
-<h3>Did you know that I am a <%=@dog.breed%>?</h3>
-<h3>Look at me, I am very <%=@dog.size%>!</h3>
-<h3>I love to say, "<%=@dog.bio%>"</h3>
-
-<h3>My Owner is <%=link_to @dog.user.name, user_path(@dog.user_id)%>, who I love very much!</h3>
+ <div id="titles"><h1>Hello! My name is <%=@dog.name%></h1>
+  <h3><%= image_tag @dog.image_url, width: "350", height: "250"%></h3>
+ </div>
+ <h3>I am <%=@dog.age%> years old</h3>
+ <h3>Did you know that I am a <%=@dog.breed%>?</h3>
+ <h3>Look at me, I am very <%=@dog.size%>!</h3>
+ <h3>I love to say, "<%=@dog.bio%>"</h3>
+ <h3>My Owner is <%=link_to @dog.user.name, user_path(@dog.user_id)%>, who I love very much!</h3>
 
 <% if current_user == @dog.user.id%>
-<div id="footer-nav">
-    <%= button_to "Edit Dog", edit_dog_path(@dog), method: :get %><br>
-    <%= button_to "Delete Dog", @dog, method: :delete %>
+  <div id="footer-nav">
+      <%= button_to "Edit Dog", edit_dog_path(@dog), method: :get %><br>
+      <%= button_to "Delete Dog", @dog, method: :delete %>
 <% else %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <%# <a class="navbar-brand" href="#">A Dog Lovers Paradise</a> %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -29,8 +29,8 @@
     <%= button_to "Go back to profile", current_user, method: :get, class: "nav-link active", class: "btn btn-primary"%>
       </li>
       </ul>
-      </div>
-    </nav>
+  </div>
+  </nav>
 <% end %>
 </div>
 </div>

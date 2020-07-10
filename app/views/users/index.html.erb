@@ -1,9 +1,9 @@
 <div id="titles"><h1>Fellow Dog Lovers Profile</h1></div>
 
 <div class="list-container">
-<ul>
-<% @users.each do |user|%>
-    <li><%= link_to user.name, user, class: "btn btn-primary" %></li><br>
-<% end %>
-</ul>
+    <ul>
+    <% @users.each do |user|%>
+        <li><%= link_to user.name, user, class: "btn btn-primary" %></li><br>
+    <% end %>
+    </ul>
 </div>

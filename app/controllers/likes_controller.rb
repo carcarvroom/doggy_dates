@@ -25,9 +25,4 @@ class LikesController < ApplicationController
         end
     end
 
-    def destroy
-        @like = Like.find(params[:id])
-        @like.delete
-        redirect_to likes_path
-    end
 end
