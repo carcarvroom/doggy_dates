@@ -13,7 +13,7 @@ class LikesController < ApplicationController
                 match = Match.find_by(matcher_id: owner_id, matchee_id: current_user.id)
                 match.update(status: "approved")
                 new_chat = match.chats.create(user_id: current_user.id, timestamp: Time.now, body: "Hey! We matched!")
-                flash[:match] = "You matched!!!"
+                flash[:match] = "You matched!"
                 redirect_to matches_path
             else
                 Match.create(matcher_id: current_user.id, matchee_id: owner_id)

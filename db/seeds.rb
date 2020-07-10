@@ -1,8 +1,8 @@
-# User.destroy_all
-# Dog.destroy_all
-# Match.destroy_all
-# Chat.destroy_all
-# Like.destroy_all
+Match.destroy_all
+User.destroy_all
+Dog.destroy_all
+Chat.destroy_all
+Like.destroy_all
 
 require 'faker'
 require 'httparty'
@@ -22,10 +22,10 @@ class GetDog
     end
 end
 
-# mia = User.create(name: "Mia", age: 29, location: "New York", occupation: "Artist", username: "mia", password: "mia")
-# sally = User.create(name: "Sally", age: 20, location: "Seattle", occupation: "Student", username: "sally", password: "sally")
-# joe = User.create(name: "Joe", age: 22, location: "San Francisco", occupation: "Student", username: "joe", password: "joe")
-# bob = User.create(name: "Bob", age: 30, location: "San Francisco", occupation: "Software Engineer", username: "bob", password: "bob")
+mia = User.create(name: "Mia", age: 29, location: "New York", occupation: "Artist", username: "mia", password: "mia")
+sally = User.create(name: "Sally", age: 20, location: "Seattle", occupation: "Student", username: "sally", password: "sally")
+joe = User.create(name: "Joe", age: 22, location: "San Francisco", occupation: "Student", username: "joe", password: "joe")
+bob = User.create(name: "Bob", age: 30, location: "San Francisco", occupation: "Software Engineer", username: "bob", password: "bob")
 
 10.times do
     User.create({
