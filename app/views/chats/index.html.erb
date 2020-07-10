@@ -1,5 +1,15 @@
 <h1>Chat!</h1>
-
+<style>
+  .icon-flipped {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  }
+  .glyphicon.glyphicon-log-out {
+    font-size: 20px;
+}
+</style>
 <div class="panel panel-default">
 <% if @over_5 %>
  <%= link_to 'Show All', '?m=all', class: 'btn btn-link pull-right' %>
@@ -14,7 +24,6 @@ $(document).ready(function(){
 </script>
 <%= flash[:match] %>
  <% @chats.each do |chat| %>
-  <% if chat.body %>
    <div class="item">
     <div class="panel-heading">
      <div class="header"><strong><%= chat.user.name %> </strong><%= chat.timestamp %></div>
@@ -26,13 +35,12 @@ $(document).ready(function(){
     </div>
    </div>
  </div>
- <% end %>
 <% end %>
 </div>
 </div>
 
 <div class="col-md-10 col-md-offset-1">
-<%= form_for(@chat, url: match_chats_path) do |f| %>
+<%= form_for(@chat, url: match_chats_path(@chat.match_id)) do |f| %>
 <div class="form-group">
   <%= f.text_area :body, class: "form-control" %>
 </div>

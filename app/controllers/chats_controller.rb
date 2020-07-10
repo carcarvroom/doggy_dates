@@ -6,7 +6,13 @@ class ChatsController < ApplicationController
   end
   
   def index
-    @chats = Chat.all.where(match_id: params[:matchid])
+    # byebug
+    if params[:matchid] 
+      session[:chatid] = params[:matchid]
+      @chats = Chat.all.where(match_id: params[:matchid])
+    else 
+      @chats = Chat.all.where(match_id: session[:chatid])
+    end
     @chat = @match.chats.new
   end
 

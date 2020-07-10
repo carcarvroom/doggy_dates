@@ -9,13 +9,11 @@
 <h3>My Owner is <%=link_to @dog.user.name, @dog.user%>, who I love very much!</h3>
 
 
-<% if current_user == @dog.user.id%>
+<% if current_user.id == @dog.user.id%>
     <%= button_to "Edit Dog", edit_dog_path(@dog), method: :get %><br>
     <%= button_to "Delete Dog", @dog, method: :delete %>
 <% else %>
     <%= button_to "I like this dog!", likes_path(:dog => @dog.id) %> 
-    <%= button_to "Go back to profile", current_user, method: :get%>
-
 <% end %>
 </div>
 <%# make the like and profile buttons aligned and blue? %>

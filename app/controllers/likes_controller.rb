@@ -14,10 +14,10 @@ class LikesController < ApplicationController
                 match.update(status: "approved")
                 new_chat = match.chats.create(user_id: current_user.id, timestamp: Time.now, body: "Hey! We matched!")
                 flash[:match] = "You matched!!!"
-                redirect_to chats_path
-            elses
+                redirect_to matches_path
+            else
                 Match.create(matcher_id: current_user.id, matchee_id: owner_id)
-                redirect_to dogs_path
+                redirect_to '/dogs'
             end
         else
             flash[:error] = "You have already liked this dog!"
