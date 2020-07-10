@@ -18,13 +18,14 @@
     background-image: url("https://www.pngitem.com/pimgs/m/60-607731_transparent-huellas-png-cat-paw-print-background-png.png");
     background-size: cover;
     background-repeat: no-repeat;
+
     }
 
- #login{
+ #middle-heart{
      display: flex;
      flex-direction: column;
      text-align: center;
-     padding-top: 45px;
+     padding-top: 150px;
  }
 
 
@@ -55,14 +56,14 @@ p {
     font-size: 20px;
 }
 
-.list-container {
+/* .list-container {
     border: 2px solid black;
     padding: 5px;
     border-radius: 10px;
     display: flex;
     font-size: 20px;
     justify-self: center;
-}
+} */
 
 #dog-profile {
     text-align: center;
