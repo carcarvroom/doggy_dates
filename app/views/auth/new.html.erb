@@ -1,6 +1,11 @@
 <div id="middle-heart">
 <h1>Login</h1>
 
+<% if logged_in? %>
+    <h1>You are logged in, <%= current_user.name.capitalize %>!</h1> 
+    <%= button_to "Profile", current_user, method: :get, class: "btn btn-primary"%><br>
+    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-primary" %>
+<% else %>
 <%= flash[:message] %>
 <br><br>
 <%= form_for :auth do |f| %>
@@ -10,5 +15,5 @@
     <%= f.password_field :password%><br><br>
     <%= f.submit "Login", class: "btn btn-primary"%>
 <% end %>
-
+<% end %>
 </div>

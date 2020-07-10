@@ -23,27 +23,3 @@
  </div>
 </div>
 <% end %>
-
-<--------------------------------->
-<div id="titles"><h1>Dogs</h1></div>
-
-    <%= form_tag dogs_path, :method => 'get' do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Dogs" %>
-        <%= submit_tag "Search" %>
-    <% end %>
-
-<% if @dogs.blank? %>
-    <h4>There are no dogs that match your search <%= params[:search] %>.</h4>
-<% else %>
-    <div class="container-dogs-index">
-    <% @dogs.each do |dog|%>
-    <div class="card" style="width: 20rem;">
-        <h3><%= link_to dog.name, dog %></h3>
-        Age: <%= dog.age %>
-        Breed: <%= dog.breed %><br>
-        <%= image_tag dog.image_url, width: "320", height: "250"%>
-        <br><br>
-        </div>
-    <% end %>
-    </div>
-<% end %>

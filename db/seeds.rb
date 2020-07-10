@@ -22,16 +22,16 @@ class GetDog
     end
 end
 
-10.times do
-    User.create({
-        name: Faker::FunnyName.two_word_name,
-        age: rand(20..40),
-        location: Faker::Address.city,
-        occupation: Faker::Job.title,
-        username: Faker::Color.unique.color_name,
-        password: Faker::Internet.password
-    })
-end
+# 10.times do
+#     User.create({
+#         name: Faker::FunnyName.two_word_name,
+#         age: rand(20..40),
+#         location: Faker::Address.city,
+#         occupation: Faker::Job.title,
+#         username: Faker::Color.unique.color_name,
+#         password: Faker::Internet.password
+#     })
+# end
 
 10.times do
     Dog.create({
