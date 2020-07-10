@@ -4,8 +4,6 @@
 
 # Bugs
 2. Remove Match button. Chats will be removed through matches
-4. Dog delete deletes user
-5. Can see dog delete on other user
 
 # Stretch Goals
 - Bootstrap - better styling! 
