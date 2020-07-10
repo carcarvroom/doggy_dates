@@ -18,7 +18,7 @@
     background-image: url("https://www.pngitem.com/pimgs/m/60-607731_transparent-huellas-png-cat-paw-print-background-png.png");
     background-size: cover;
     background-repeat: no-repeat;
-    }
+}
 
 body.welcome {
   background-image: url("https://www.festivalclaca.cat/imgfv/b/126-1261514_png-dog-paw-transparent-transparent-background-dog-paw.png");
@@ -57,9 +57,14 @@ body.pug {
      display: flex;
      flex-direction: column;
      text-align: center;
+     padding-top: 150px;
+ }
+ #middle{
+     display: flex;
+     flex-direction: column;
+     text-align: center;
      padding-top: 50px;
  }
-
 
 .nav,
 justify-content-center {
