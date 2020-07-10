@@ -19,7 +19,6 @@ Occupation: <%= @user.occupation %><br>
 <h3><%= link_to dog.name, dog %></h3>
   <img src=<%= dog.image_url%> class="card-img-top" alt="dog">
   <div class="card-body">
-    <h5 class="card-title"><%= dog.name %></h5>
     <p class="card-text"><%= dog.name %>, <%= dog.age %>, <%= dog.breed  %></p>
     <%= button_to 'Delete', dog, method: :delete, class: "btn btn-primary" %>
     </div>
@@ -37,13 +36,6 @@ Occupation: <%= @user.occupation %><br>
     <%= button_to "Add Dog", new_dog_path, method: :get, class: "btn btn-primary" %>
   </li>
   <%end%>
-
-
-
-
-
-
-
 
 
 
