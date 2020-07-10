@@ -7,7 +7,7 @@ class User < ApplicationRecord
     # as a matcher
     has_many :matchee_swipes, class_name: "Match", foreign_key: :matcher_id, dependent: :destroy
     has_many :matchees, through: :matchee_swipes, source: :matchee
-    has_many :matches, dependent: :destroy
+    has_many :matches
     has_many :chats, through: :matches
 
     validates :username, uniqueness: true

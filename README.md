@@ -35,3 +35,10 @@
    2. Incorporate more than just dogs 
    3. Location (finding local singles in specific area)
 
+
+## Ruby version
+
+  ``` ruby '2.6.1'
+  ```
+ <!-- insert demo video here -->
+*  

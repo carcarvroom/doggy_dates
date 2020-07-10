@@ -1,6 +1,9 @@
 <body class="shiba-cartoon"> 
 <div id="middle">
 <h1>All Your Matches!</h1>
+ <% if flash[:match]%>
+    <p class="text-success" style="font-size:20px;"><%= flash[:match]%></p>
+<% end %>
 <% @matches.each do |match| %>
     <% if current_user.id == match.matcher.id %>
         <li><%= link_to "#{match.matchee.name}", match_chats_path(match, match.chats, matchid: match.id), method: :get, class: "btn btn-primary"%></li>
