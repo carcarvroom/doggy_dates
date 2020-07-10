@@ -40,10 +40,6 @@
           <%= button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-primary" %>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search Dogs">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
     <% elsif logged_in? && current_user.id != @user.id%>
       <div class="collapse navbar-collapse" id="navbarColor01">
@@ -64,10 +60,6 @@
           <%= button_to "Logout", logout_path, method: :delete, class: "nav-link active", class: "btn btn-primary" %>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search Dogs">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
   <% else %>
       <div class="collapse navbar-collapse" id="navbarColor01">
