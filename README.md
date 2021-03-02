@@ -1,7 +1,9 @@
+
 # Doggy Dates Website
     
 ## Project status
   We have completed the requirements for this project for Flatiron, But there is always room for improvments. The status of our project is "Stand-by", we welcome volunteers on adding the features listed in our Roadmap to continue the development of this application!
+
 
 ## Installation
   1. Fork and clone repository.
@@ -15,8 +17,6 @@
   This Web application is designed for single dog lovers in your local area! Think of it as your typical dating app, except you are viewing your potential date's dog companion! 
 
   How it works is, that after you have created your profile, you create a profile for your furry friend! (Yes, It is required you have a dog.). Once you are all set, you can view other dogs and their parents!
-
-  If you and another user both like each others dog pictures, a match has been created and you will be able to chat with them in hopes to create a spark between you and your fellow dog lover!
 
 ![](https://media.giphy.com/media/L0NBGdEtE8tUP6MVwH/giphy.gif)
 
